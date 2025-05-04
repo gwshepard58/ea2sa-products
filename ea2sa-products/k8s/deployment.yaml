@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ea2sa-products
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ea2sa-products
+  template:
+    metadata:
+      labels:
+        app: ea2sa-products
+    spec:
+      containers:
+        - name: ea2sa-products
+          image: ea2sa-products:latest
+          ports:
+            - containerPort: 8000
